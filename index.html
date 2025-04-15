@@ -1,0 +1,98 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dementia Caregiver Support</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+    <script src="script.js"></script>
+</head>
+
+<!-- Modal Component -->
+<div id="customModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <div id="modalMessage"></div>
+      <input type="text" id="modalInput" style="display:none; width:100%; margin-top:10px;" />
+      <div class="modal-buttons">
+          <button id="modalConfirm" class="save-btn">OK</button>
+          <button id="modalCancel" class="delete-person-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+  
+
+
+<body>
+    <!-- Header with Home Button -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-header">
+            <div class="nav-header" onclick="toggleMenu()">
+                <button class="hamburger-menu">☰</button>
+                <span class="nav-text">View Other Memories</span>
+            </div>
+            <div class="add-person-wrapper" onclick="addNewPerson()">
+                <button class="add-person-btn">+</button>
+                <span class="nav-text">Add New Memory</span>
+            </div>
+        </div>
+        <div class="menu-items">
+            <ol class="breadcrumb">
+            </ol>
+        </div>
+        <div class="notes-section">
+            <button id="toggle-notes" class="toggle-notes-btn" onclick="toggleNotes()">📝 Notes</button>
+            <div id="notes-content" style="display: none;">
+                <div id="notes-list"></div>
+                <textarea id="new-note" placeholder="Write a new note..."></textarea>
+                <button onclick="saveNote()" class="save-note-btn">Save Note</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content-wrapper">
+        <section class="person-profile">
+            <img src="profileimg.png" class="profile-image">
+            <div class="edit-container">
+                <button class="edit-btn" onclick="toggleEditImage()">Change Image</button>
+            </div>
+            <input type="file" id="imageInput" accept="image/*" style="display: none;">
+            <button class="save-btn" id="imageSaveBtn" onclick="saveImageChanges()" style="display: none;">Save Image</button>
+            <div class="name-section">
+            <h2>New Memory</h2>
+            <div class="edit-container">
+                <button class="edit-btn" onclick="toggleEditName()">Edit Name</button>
+            </div>
+            <input type="text" id="nameInput" style="display: none;">
+            <button class="save-btn" onclick="saveNameChanges()" style="display: none;">Save Name</button>
+            <h4>Brief description of the image, person, or memory</h4>
+            <div class="edit-container">
+               <button class="edit-btn" onclick="toggleEditRelationship()">Describe image</button>
+            </div>
+            <input type="text" id="relationshipInput" style="display: none;">
+            <button class="save-btn" id="relationshipSaveBtn" onclick="saveRelationshipChanges()" style="display: none;">Save description</button>
+            </div>
+            <button class="delete-person-btn" onclick="deletePerson()">Remove Memory</button>
+
+            <!-- Conversation Starters -->
+            <div class="conversation-section">
+                <h3>Conversation Ideas</h3>
+                <ul class="conversations-list">
+                        <button onclick="showTopic('family')" class="topic-button">
+                            Talk about family
+                        </button>
+                        <button onclick="showTopic('food')" class="topic-button">
+                            Favorite foods
+                        </button>
+                        <button onclick="showTopic('hobbies')" class="topic-button">
+                            Hobbies and interests
+                        </button>
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

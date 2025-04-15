@@ -1,0 +1,549 @@
+/* styles.css */
+
+* {
+    font-size: 16px;
+    font-family: 'Nunito';
+  }
+  
+  @media (max-width: 400px) {
+    html {
+      font-size: 14px;
+    }
+  
+    .nav-header {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+  
+    .profile-image {
+      width: 100%;
+      height: auto;
+    }
+  
+    .activity-button, .topic-button {
+      font-size: 1rem;
+      padding: 12px;
+    }
+  
+    .nav-text {
+      font-size: 14px;
+    }
+  }
+:root {
+    --primary-color: #7745a1;
+    --secondary-color: #d1f9ff;
+    --accent-color: #5f3682;
+    --background-color: #FFFFFF;
+    --text-color: #000000;
+    --border-color: #CCCCCC;
+    --gradient-start: #d1f9ff;
+    --gradient-end: #f8f8f8;
+    --shadow-color: rgba(119, 69, 161, 0.1);
+    --text-dark: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+.nav-header {
+    display: none;
+    align-items: center;
+    padding: 10px;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+}
+
+.hamburger-menu {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.add-person-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-left: auto;
+}
+
+.add-person-wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.add-person-wrapper .nav-text {
+    margin-left: 5px;
+    color: white;
+}
+.nav-text {
+    font-size: 16px;
+}
+
+.menu-items {
+    display: block;
+}
+
+.main-nav {
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.breadcrumb {
+    display: flex;
+    list-style: none;
+    overflow-x: auto;
+    padding: 0.5rem;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.breadcrumb a {
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.breadcrumb a:hover, .breadcrumb a.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.edit-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.edit-btn {
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 12px 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.save-btn {
+    background-color: #4CAF50;
+    color: white;
+    margin: 5px auto;
+    border: none;
+    cursor: pointer;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.name-section {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+}
+
+.content-wrapper {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.name {
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.activity-button, .topic-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    background-color: white;
+    min-height: 44px;
+    color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.activity-button:hover, .topic-button:hover {
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.notes-section {
+    padding: 15px;
+    background: white;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+#notes-content {
+    display: none;
+}
+
+.toggle-notes-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.toggle-notes-btn:hover {
+    background-color: var(--accent-color);
+}
+
+.note-item {
+    background: #f9f9f9;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    position: relative;
+}
+
+.note-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.note-actions button {
+    flex: 1;
+    max-width: 100px;
+}
+
+#new-note {
+    width: 100%;
+    min-height: 100px;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.save-note-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#imageInput {
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Modal Styles */
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.modal-buttons button {
+    flex: 1;
+    padding: 12px;
+    font-size: 1rem;
+    min-width: 0;
+    margin: 0;
+    display: inline-block;
+    max-width: none;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .nav-header {
+        display: flex;
+    }
+    
+    .menu-items {
+        display: none;
+    }
+    
+    .menu-items.active {
+        display: block;
+    }
+    
+    .breadcrumb {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 360px) {
+    body {
+        font-size: 1.1em;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        font-size: 1em;
+    }
+    .modal-buttons {
+        flex-direction: column;
+    }
+}
+
+#contentForm {
+    background-color: #ccc;
+    padding: 20px;
+}
+
+#contentBtn {
+    background-color: white;
+    border: 3px solid gainsboro;
+    color: #147180;
+    border-radius: 8px;
+    width: 50%;
+    padding: 10px;
+    display: block;
+}
+
+#contentBtn:hover {
+    background-color:#147180;
+    color: white;
+    border-radius: 8px;
+    border: 3px solid;
+    width: 50%;
+    padding: 10px;
+    cursor:pointer;
+}
+
+input[type=text], input[type=img] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 16px;
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+.delete-person-btn {
+    display: flex;
+    justify-content: center;
+    padding: 8px 10px;
+    margin: 10px auto;
+    max-width: 100px;
+    font-size: 1rem;
+    background-color: #ff6b6b;
+    min-height: 10px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.delete-person-btn:hover {
+    background-color: #e53935;
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    text-align: center;
+}
+
+.modal .save-btn, .modal .delete-person-btn {
+    display: inline-block !important;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.modal-content .close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.idea-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 1.1rem;
+    background-color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.idea-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.loading-indicator {
+    text-align: center;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    color: var(--primary-color);
+}
+
+.error-message {
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #ffeeee;
+    border: 1px solid #ff6b6b;
+    border-radius: 8px;
+    color: #e53935;
+    text-align: center;
+}
+
+.retry-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
